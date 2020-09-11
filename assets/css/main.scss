@@ -1,0 +1,542 @@
+body {
+  font-family: 'Basier Circle Regular', -apple-system, BlinkMacSystemFont,
+    Roboto, 'Oxygen-sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-transition {
+  transition-property: color background-color border-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+:root {
+  --dark: #0b0c0e;
+  --light: #f5f6f7;
+  --background-dark: #0b0c0e;
+  --background-dark-rgb: rgb(11, 12, 14, 0.7);
+  --background-dark-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23718096' fill-opacity='0.13' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  --background-light: #f5f6f7;
+  --background-light-rgb: rgb(245, 246, 247, 0.7);
+  --background-light-img: '';
+  --card-bg-dark: black;
+  --card-bg-light: white;
+}
+
+.dark-bg {
+  background-color: var(--background-dark);
+  background-image: var(--background-dark-img);
+}
+
+.light-bg {
+  background-color: var(--background-light);
+  background-image: var(--background-dark-img);
+}
+
+/* Dark */
+.theme-dark {
+  --default: var(--dark);
+  --default-inverse: var(--light);
+  --primary: #0ef;
+  --primary-variant: #c2185b;
+  --potion: #0ef;
+  --secondary: #96f2d7;
+  --secondary-variant: #96f2d7;
+  --background: var(--dark);
+  --background-variant: #212529;
+  --surface: #121212;
+  --card-bg: var(--card-bg-dark);
+
+  /* Error state */
+  --error: #cf6679;
+
+  /* typography */
+  --on-primary: var(--light);
+  --on-secondary: #087f5b;
+  --on-background-1: var(--light);
+  --on-background-2: #718096;
+  --on-background-3: #77797a;
+  --on-error: #000;
+  --shadow: 0 1px 2px 0 rgba(6, 7, 8, 0.9);
+  --cover-bg: var(--background-dark-rgb);
+}
+
+/* Light */
+.theme-light {
+  --default: var(--light);
+  --default-inverse: var(--dark);
+  --primary: #078080;
+  --primary-variant: #c2185b;
+  --potion: #0ef;
+  --secondary: #96f2d7;
+  --secondary-variant: #96f2d7;
+  --background: var(--light);
+  --background-variant: #212529;
+  --surface: #121212;
+  --card-bg: var(--card-bg-light);
+
+  /* Error state */
+  --error: #cf6679;
+
+  /* typography */
+  --on-primary: var(--dark);
+  --on-secondary: #087f5b;
+  --on-background-1: var(--dark);
+  --on-background-2: #293241;
+  --on-background-3: #77797a;
+  --on-error: #fff;
+  --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --cover-bg: var(--background-light-rgb);
+}
+
+.cover-background {
+  background-color: var(--cover-bg);
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  transition: background 0.4s ease-in-out, color 0.4s ease-out, right ease 0.3s;
+  right: 0;
+  position: relative;
+  color: var(--primary);
+  padding: 4px 0px;
+
+  &:hover {
+    right: -10px;
+    background: var(--primary);
+    color: var(--default);
+  }
+}
+
+.co-shadow {
+  box-shadow: var(--shadow);
+}
+
+.about-link {
+  font-weight: 600;
+  transition: border 0.2s ease-in, color 0.5s ease-in;
+  color: var(--primary);
+
+  &:hover {
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--primary);
+  }
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.hr-style {
+  border: 0;
+  height: 1px;
+  background: var(--on-background-3);
+}
+
+.link__regular {
+  transition: border 0.2s ease-in, color 0.2s ease-in;
+
+  &:hover {
+    border-bottom-width: 4px;
+    border-bottom-color: var(--potion);
+    color: var(--potion);
+  }
+
+  &--active {
+    border-bottom-width: 4px;
+    border-bottom-color: var(--potion);
+    color: var(--potion);
+  }
+}
+
+.link__special {
+  font-weight: 600;
+  transition: border 0.2s ease-in, color 0.2s ease-in;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--secondary-variant);
+    color: var(--secondary-variant);
+  }
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.4s ease;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.3s ease;
+}
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
+
+// Nav hamburger
+#nav-hamburger {
+  width: 30px;
+  height: 14px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: background-color 0.5s ease-in, 0.25s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in, 0.25s ease-in-out;
+    -o-transition: background-color 0.5s ease-in, 0.25s ease-in-out;
+    // transition: 0.25s ease-in-out;
+    transition: background-color 0.5s ease-in, 0.25s ease-in-out;
+  }
+
+  & span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+
+  & span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+  }
+
+  & span:nth-child(1),
+  & span:nth-child(2) {
+    top: 0px;
+  }
+
+  & span:nth-child(3),
+  & span:nth-child(4) {
+    top: 7px;
+  }
+
+  & span:nth-child(5),
+  & span:nth-child(6) {
+    top: 14px;
+  }
+
+  &.open span {
+    background: var(--primary);
+  }
+
+  &.close span {
+    background: var(--on-background-2);
+  }
+
+  &.open span:nth-child(1),
+  &.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &.open span:nth-child(2),
+  &.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  &.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
+
+  &.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  &.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  &.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  &.open span:nth-child(5) {
+    left: 5px;
+    top: 12px;
+  }
+
+  &.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 12px;
+  }
+}
+
+// $BG: #0B0C0E;
+$BG: #333;
+$COLOR_WHITE: #fff;
+$COLOR_POTION: #0ef;
+
+// @import url("https://fonts.googleapis.com/css?family=Cute+Font&display=swap");
+// body {
+//   width: 100%;
+//   height: 100%;
+//   font-family: "Cute Font", cursive;
+//   margin: 0;
+// }
+
+* {
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+  }
+}
+
+.potion-container {
+  background: $BG;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  filter: contrast(50);
+}
+
+.potion {
+  position: relative;
+  width: 150px;
+  height: 190px;
+  border-radius: 90% 90% 70% 70%;
+  overflow: hidden;
+
+  &__top {
+    position: absolute;
+    top: -80px;
+    left: 35px;
+    width: 45px;
+    height: 82px;
+    border-left: 5px solid $COLOR_WHITE;
+    border-right: 5px solid $COLOR_WHITE;
+    background: $BG;
+    box-sizing: border-box;
+
+    &:before {
+      top: 0;
+      left: 0;
+      width: 35px;
+      height: 20px;
+      background: $COLOR_WHITE;
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 11px;
+    width: 125px;
+    height: 115px;
+    border-radius: 90% 90% 70% 70%;
+    border: 5px solid $COLOR_WHITE;
+    box-sizing: border-box;
+  }
+}
+
+@mixin dropSetting($max, $scale, $duration, $delay, $left) {
+  --max: translateY(#{$max}px) scale(#{$scale});
+  --min: translateY(50px) scale(#{$scale});
+
+  transform: translateY(50px);
+  animation: drop #{$duration}s ease-in-out #{$delay}s alternate infinite;
+  left: #{$left}px;
+}
+
+.drop {
+  position: absolute;
+  background: $COLOR_POTION;
+  // animation: potion-animation 10s infinite;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+
+  &:nth-of-type(1) {
+    @include dropSetting(0, 1, 2.4, 1, 45);
+  }
+
+  &:nth-of-type(2) {
+    @include dropSetting(-60, 0.5, 4, 3, 45);
+  }
+
+  &:nth-of-type(3) {
+    @include dropSetting(10, 0.2, 6, 2.2, 10);
+  }
+
+  &:nth-of-type(4) {
+    @include dropSetting(20, 0.8, 3, 3.8, 70);
+  }
+
+  &:nth-of-type(5) {
+    @include dropSetting(10, 0.2, 6, 1.8, 80);
+  }
+
+  &:nth-of-type(6) {
+    @include dropSetting(10, 0.3, 5, 3, 20);
+  }
+}
+
+@keyframes drop {
+  from {
+    transform: var(--min);
+  }
+
+  40% {
+    transform: var(--max);
+  }
+
+  90% {
+    transform: var(--min);
+  }
+
+  to {
+    transform: var(--min);
+  }
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 4em;
+  height: 4em;
+  border-radius: 90% 90% 70% 70%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  background: $COLOR_POTION;
+  // animation: potion-animation 10s infinite;
+
+  &:before {
+    top: 0px;
+    width: 51px;
+    height: 40px;
+    background: $COLOR_POTION;
+    // animation: potion-animation 10s infinite;
+  }
+
+  &:after {
+    width: 65px;
+    height: 15px;
+    transform: translateY(25px);
+    background-color: $BG;
+    border-radius: 30%;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+
+  &--left {
+    left: 8px;
+
+    &:before {
+      left: -10px;
+    }
+
+    &:after {
+      left: 10px;
+      animation: wave 5s 0s alternate infinite;
+    }
+  }
+
+  &--right {
+    right: 8px;
+
+    &:before {
+      right: -10px;
+    }
+
+    &:after {
+      right: 10px;
+      animation: wave 5s 2.5s alternate infinite;
+    }
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes potion-animation {
+  0% {
+    background-color: #0ef;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    // background-color: green;
+    background-color: #0ef;
+  }
+  75% {
+    background-color: brown;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+.no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
