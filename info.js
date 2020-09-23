@@ -1,5 +1,26 @@
 export const projects = [
   {
+    title: 'ThreadSpeaker',
+    summary: 'Listen to your Favourite Twitter Threads',
+    description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
+                  Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
+    location: {
+      url: 'https://threadspeaker.app',
+      name: 'View Project',
+    },
+    image: {
+      url:
+        'https://res.cloudinary.com/cheapflix/image/upload/v1600531602/threadspeaker/card.png',
+      alt: '',
+    },
+    github: {
+      url: null,
+      name: null,
+    },
+    tags: ['Web', 'Twitter Bot'],
+    stack: ['NodeJs', 'Google Cloud Platform'],
+  },
+  {
     title: 'Estimating the Rt of COVID-19 in Nigeria',
     summary: 'Statistical models and insights on coronavirus in Nigeria',
     description: `A data analysis project done during the coronavirus pandemic. This project offers visual insights
@@ -20,7 +41,7 @@ export const projects = [
       name: '',
     },
     tags: ['Web', 'Twitter'],
-    stack: ['Python', 'Jupyter Notebook', 'Pandas'],
+    stack: ['Python', 'Pandas'],
   },
   {
     title: 'Cloud Functions For Firebase Boilerplate',
@@ -42,7 +63,7 @@ export const projects = [
       name: '',
     },
     tags: ['Web', 'Twitter'],
-    stack: ['TypeScript', 'Cloud Functions for Firebase', 'Express'],
+    stack: ['TypeScript', 'Cloud Functions for Firebase'],
   },
 ]
 
