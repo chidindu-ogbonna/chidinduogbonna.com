@@ -15,6 +15,8 @@
 
     <IndexWriting :articles="articles" />
 
+    <!-- <IndexTweet :tweets="tweets" /> -->
+
     <IndexExperience />
 
     <!-- Contact Section -->
@@ -81,12 +83,14 @@ export default {
       articleQuery = { published: true, featured: true }
     }
 
+    const tweets = await $content('/tweets').fetch()
+
     const articles = await $content('/articles')
       .where(articleQuery)
       .sortBy('createdAt', 'desc')
       .fetch()
 
-    return { scrollTo, articles }
+    return { scrollTo, articles, tweets }
     // return { scrollTo, showIntro, articles }
   },
 
@@ -170,6 +174,13 @@ export default {
       bodyAttrs: {
         class: [this.showIntro ? 'overflow-hidden' : ''],
       },
+      // script: [
+      //   {
+      //     src: 'https://platform.twitter.com/widgets.js',
+      //     charset: 'utf-8',
+      //     async: true,
+      //   },
+      // ],
     }
   },
 }

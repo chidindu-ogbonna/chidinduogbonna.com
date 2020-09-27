@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: 'ThreadSpeaker',
+    title: '@threadspeaker',
     summary: 'Listen to your Favourite Twitter Threads',
     description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
                   Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
@@ -19,6 +19,28 @@ export const projects = [
     },
     tags: ['Web', 'Twitter Bot'],
     stack: ['NodeJs', 'Google Cloud Platform'],
+  },
+  {
+    title: 'Cloud Functions For Firebase Boilerplate',
+    summary:
+      'A template for cloud functions that for writing scalable and maintainable code',
+    description: `An ever-evolving, opinionated architecture and development environment for writing and structuring google cloud functions for firebase.
+    It takes into account performance of cloud functions, and developer productivity.`,
+    location: {
+      url: null,
+      alt: null,
+    },
+    image: {
+      url:
+        'https://res.cloudinary.com/cheapflix/image/upload/v1598585539/projects-images/Cloud_functions_for_firebase_boilerplate_2.png',
+      alt: 'Cloud functions boilerplate',
+    },
+    github: {
+      url: 'https://github.com/chidindu-ogbonna/cloud-functions-boilerplate',
+      name: '',
+    },
+    tags: ['Web', 'Twitter'],
+    stack: ['TypeScript', 'Cloud Functions for Firebase'],
   },
   {
     title: 'Estimating the Rt of COVID-19 in Nigeria',
@@ -42,28 +64,6 @@ export const projects = [
     },
     tags: ['Web', 'Twitter'],
     stack: ['Python', 'Pandas'],
-  },
-  {
-    title: 'Cloud Functions For Firebase Boilerplate',
-    summary:
-      'A template for cloud functions that for writing scalable and maintainable code',
-    description: `An ever-evolving, opinionated architecture and development environment for writing and structuring google cloud functions for firebase.
-    It takes into account performance of cloud functions, and developer productivity.`,
-    location: {
-      url: null,
-      alt: null,
-    },
-    image: {
-      url:
-        'https://res.cloudinary.com/cheapflix/image/upload/v1598585539/projects-images/Cloud_functions_for_firebase_boilerplate_2.png',
-      alt: 'Cloud functions boilerplate',
-    },
-    github: {
-      url: 'https://github.com/chidindu-ogbonna/cloud-functions-boilerplate',
-      name: '',
-    },
-    tags: ['Web', 'Twitter'],
-    stack: ['TypeScript', 'Cloud Functions for Firebase'],
   },
 ]
 

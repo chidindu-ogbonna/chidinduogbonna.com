@@ -9,31 +9,38 @@
           View Intro
         </button>
       </div> -->
-      <h1 class="mb-4 text-3xl font-bold text-on-background-1">
+      <h1 class="py-8 mb-4 text-3xl font-bold text-on-background-1">
         Hi, I'm Chidindu Ogbonna
       </h1>
       <div class="text-lg">
         <h2 class="mb-2 text-on-background-2">
           A <span class="font-bold text-on-background-1">Scientist</span> &
-          <span class="font-bold text-on-background-1">Engineer</span>. I
-          experiment with Data and engineer Software Systems.
+          <span class="font-bold text-on-background-1">Engineer</span>
         </h2>
         <div class="mb-2 text-on-background-2">
-          I build and work on some useful
-          <a v-scroll-to="'#projects'" class="about-link" href="#projects"
-            >Projects</a
-          >
-          on the side. I contribute to open source through my
+          I've built some
+          <a v-scroll-to="'#projects'" class="about-link" href="#projects">
+            things
+          </a>
+          on the side. <br />
+          I contribute to open source through my
           <a
             target="_blank"
             href="https://github.com/chidindu-ogbonna"
             class="about-link"
             >GitHub</a
-          >. I talk about data, machine learning and cloud computing
-          <n-link to="/blog" class="about-link"> @blog </n-link>
+          >. <br />
+          I talk about Data, ML and Cloud Computing on my
+          <n-link to="/blog" class="about-link"> @blog </n-link> and
+          <a
+            class="about-link"
+            href="https://twitter.com/intent/user?screen_name=chidinduogbonna"
+            target="_blank"
+            >Twitter</a
+          >
         </div>
         <div class="mb-2 text-on-background-2">
-          You can reach me through email at
+          You can reach me through mail at
           <a
             class="about-link"
             href="mailto:hello@chidinduogbonna.com"
@@ -41,13 +48,6 @@
           >
             hello@chidinduogbonna.com
           </a>
-          or
-          <a
-            class="about-link"
-            href="https://twitter.com/intent/user?screen_name=chidinduogbonna"
-            target="_blank"
-            >Twitter</a
-          >
         </div>
       </div>
     </div>

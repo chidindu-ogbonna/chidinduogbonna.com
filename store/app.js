@@ -2,7 +2,7 @@ import { analytics } from '@/services/firebase'
 
 export const state = () => ({
   navbarState: false,
-  theme: 'light',
+  theme: 'dark',
 })
 
 export const getters = {}

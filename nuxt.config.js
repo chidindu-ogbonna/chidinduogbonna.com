@@ -1,12 +1,16 @@
 /* eslint-disable nuxt/no-cjs-in-config */
 require('dotenv').config()
-const { meta, pwaIcons, splashScreens } = require('./nuxt-attrs')
+const { meta, splashScreens } = require('./nuxt-attrs')
 
 export default {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   mode: 'universal',
   target: 'server',
   head: {
-    title: 'Chidindu Promise Ogbonna | Data Scientist & Software Engineer',
+    title: 'Call me 6ones - A Scientist & Engineer',
     meta: [...meta],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -16,6 +20,13 @@ export default {
       },
       ...splashScreens,
     ],
+    // script: [
+    //   {
+    //     src: 'https://platform.twitter.com/widgets.js',
+    //     charset: 'utf-8',
+    //     async: true,
+    //   },
+    // ],
   },
 
   css: [
@@ -53,12 +64,16 @@ export default {
 
   pwa: {
     manifest: {
-      name: 'Chidindu Promise Ogbonna',
+      name: 'Chidindu Ogbonna',
       short_name: 'Chidindu Ogbonna',
       theme_color: '#0ef',
       background_color: '#000',
       start_url: `/?standalone=true`,
-      icons: [...pwaIcons],
+    },
+    icon: {
+      // XXX: Remember to burst the pwa cache to update icons
+      // rm -rf node_modules/.cache/pwa/icon
+      source: '/icon.png',
     },
   },
 

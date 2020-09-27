@@ -4,7 +4,7 @@ export const meta = [
   {
     hid: 'description',
     name: 'description',
-    content: 'A Data Scientist & Software Engineer',
+    content: 'A Scientist & Engineer',
   },
 
   // “summary”, “summary_large_image”, “app”, or “player”
@@ -19,12 +19,12 @@ export const meta = [
   {
     hid: 'twitter:title',
     name: 'twitter:title',
-    content: 'Chidindu Promise Ogbonna',
+    content: 'Call me 6ones',
   },
   {
     hid: 'twitter:description',
     name: 'twitter:description',
-    content: 'A Data Scientist & Software Engineer',
+    content: 'A Scientist & Engineer',
   },
   {
     hid: 'twitter:image',
@@ -34,13 +34,13 @@ export const meta = [
   {
     hid: 'twitter:image:alt',
     name: 'twitter:image:alt',
-    content: 'Chidindu Promise Ogbonna',
+    content: 'Call me 6ones',
   },
 
   {
     hid: 'og:title',
     property: 'og:title',
-    content: 'Chidindu Promise Ogbonna',
+    content: 'Call me 6ones',
   },
   {
     hid: 'og:url',
@@ -62,7 +62,7 @@ export const meta = [
   {
     hid: 'og:description',
     property: 'og:description',
-    content: 'A Data Scientist & Software Engineer',
+    content: 'A Scientist & Engineer',
   },
   { property: 'og:email', content: 'hello@chidinduogbonna.com' },
   { property: 'og:phone_number', content: '2348079191593' },
