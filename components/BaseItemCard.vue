@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col w-full h-full rounded-md co-shadow bg-card-bg">
+  <div
+    class="flex flex-col w-full h-full transition-all duration-500 ease-in-out transform border-2 border-transparent rounded-md bg-card-bg hover:border-primary hover:scale-105 hover:-translate-y-1"
+  >
     <TheImage :image-url="imageUrl" :image-alt="imageAlt" :link="link" />
     <slot />
   </div>
