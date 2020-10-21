@@ -3,7 +3,9 @@
     <div class="mb-16">
       <div id="page-details" class="mb-12">
         <div class="px-4 py-8">
-          <h1 class="mb-4 text-4xl font-extrabold leading-10 md:text-5xl">
+          <h1
+            class="mb-4 text-4xl font-extrabold leading-10 md:leading-normal md:text-5xl"
+          >
             {{ page.title }}
           </h1>
           <div class="flex flex-row flex-wrap text-sm">

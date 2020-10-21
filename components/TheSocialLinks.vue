@@ -85,13 +85,13 @@ export default {
   data() {
     return {
       socialLinks: [
-        { name: 'Twitter', link: 'https://www.twitter.com/@6ones' },
+        { name: 'Twitter', link: 'https://www.twitter.com/@chidinduogbonna' },
         { name: 'GitHub', link: 'https://www.github.com/chidindu-ogbonna' },
         {
           name: 'LinkedIn',
           link: 'https://www.linkedin.com/in/chidindu-ogbonna',
         },
-        { name: 'Medium', link: 'https://www.medium.com/@6ones' },
+        { name: 'Medium', link: 'https://www.medium.com/@chidinduogbonna' },
       ],
     }
   },
