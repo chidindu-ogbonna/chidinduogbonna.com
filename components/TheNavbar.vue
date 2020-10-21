@@ -7,6 +7,9 @@
       <header class="max-w-screen-lg px-4 py-2 mx-auto">
         <nav class="flex items-center justify-between">
           <the-theme-switcher></the-theme-switcher>
+          <p class="text-base font-bold md:text-lg text-on-background-2">
+            6ones
+          </p>
           <div class="flex items-center">
             <icon-hamburger
               :state="dropdownState"
