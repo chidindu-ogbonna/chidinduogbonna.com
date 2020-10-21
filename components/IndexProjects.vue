@@ -1,9 +1,6 @@
 <template>
   <section id="projects" class="min-h-screen py-20">
     <div class="flex flex-col justify-center max-w-screen-lg px-4 mx-auto">
-      <div class="mb-8">
-        <page-title> BUILT BY ME </page-title>
-      </div>
       <div class="flex flex-col flex-wrap mb-4 md:flex-row">
         <div
           v-for="(project, index) in projects"

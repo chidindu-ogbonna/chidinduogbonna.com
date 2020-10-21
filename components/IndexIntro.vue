@@ -11,7 +11,7 @@
         <p
           class="text-sm font-semibold tracking-wider uppercase md:text-base text-potion tracking-in-expand-fwd"
         >
-          A Scientist
+          An Engineer
         </p>
       </div>
       <div

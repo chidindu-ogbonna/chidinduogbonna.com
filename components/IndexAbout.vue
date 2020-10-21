@@ -13,10 +13,7 @@
         Hi, I'm Chidindu Ogbonna
       </h1>
       <div class="text-lg">
-        <h2 class="mb-2 text-on-background-2">
-          A <span class="font-bold text-on-background-1">Scientist</span> &
-          <span class="font-bold text-on-background-1">Engineer</span>
-        </h2>
+        <h2 class="mb-2 font-bold text-on-background-1">An Engineer</h2>
         <div class="mb-2 text-on-background-2">
           I've built some
           <a v-scroll-to="'#projects'" class="about-link" href="#projects">
