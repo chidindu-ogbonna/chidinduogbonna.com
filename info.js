@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: '@threadspeaker',
-    summary: 'Listen to your Favourite Twitter Threads',
+    summary: 'A twitter bot that converts tweets to audio',
     description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
                   Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
     location: {
@@ -23,7 +23,7 @@ export const projects = [
   {
     title: 'Cloud Functions For Firebase Boilerplate',
     summary:
-      'A template for cloud functions that for writing scalable and maintainable code',
+      'A cloud functions template for writing scalable and maintainable code',
     description: `An ever-evolving, opinionated architecture and development environment for writing and structuring google cloud functions for firebase.
     It takes into account performance of cloud functions, and developer productivity.`,
     location: {
@@ -44,7 +44,7 @@ export const projects = [
   },
   {
     title: 'Estimating the Rt of COVID-19 in Nigeria',
-    summary: 'Statistical models and insights on coronavirus in Nigeria',
+    summary: 'Statistical models and analysis on coronavirus in Nigeria',
     description: `A data analysis project done during the coronavirus pandemic. This project offers visual insights
       and statiscal analysis into the development and spread of the virus within Nigeria. It also shows estimated
       calculations on the Effective Reproduction Number (Rt) of the virus.`,
@@ -89,7 +89,7 @@ export const articles = [
 export const experiences = [
   {
     location: 'Charlotte, North Carolina. USA & Nigeria',
-    role: 'Data Scientist',
+    role: 'Software Engineer & Data Scientist',
     company: {
       name: 'Medherd',
       url: 'https://medherd.com',

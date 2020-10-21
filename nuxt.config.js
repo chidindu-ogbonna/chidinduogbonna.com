@@ -10,7 +10,7 @@ export default {
   mode: 'universal',
   target: 'server',
   head: {
-    title: 'Call me 6ones - A Scientist & Engineer',
+    title: 'Call me 6ones - An Engineer',
     meta: [...meta],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -66,7 +66,7 @@ export default {
     manifest: {
       name: 'Chidindu Ogbonna',
       short_name: 'Chidindu Ogbonna',
-      theme_color: '#0ef',
+      theme_color: '#0b0c0e',
       background_color: '#000',
       start_url: `/?standalone=true`,
     },

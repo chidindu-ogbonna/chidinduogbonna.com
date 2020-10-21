@@ -4,7 +4,7 @@ export const meta = [
   {
     hid: 'description',
     name: 'description',
-    content: 'A Scientist & Engineer',
+    content: 'An Engineer',
   },
 
   // “summary”, “summary_large_image”, “app”, or “player”
@@ -24,7 +24,7 @@ export const meta = [
   {
     hid: 'twitter:description',
     name: 'twitter:description',
-    content: 'A Scientist & Engineer',
+    content: 'An Engineer',
   },
   {
     hid: 'twitter:image',
@@ -62,7 +62,7 @@ export const meta = [
   {
     hid: 'og:description',
     property: 'og:description',
-    content: 'A Scientist & Engineer',
+    content: 'An Engineer',
   },
   { property: 'og:email', content: 'hello@chidinduogbonna.com' },
   { property: 'og:phone_number', content: '2348079191593' },
