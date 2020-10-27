@@ -28,6 +28,12 @@ body {
   --background-light-img: '';
   --card-bg-dark: black;
   --card-bg-light: white;
+  --green: #a2d39b;
+  --blue: #62d0dd;
+  --purple: #ceb4ff;
+  --red: #ff708b;
+  --orange: #ff8e21;
+  --violet: #a0b7ff;
 }
 
 .dark-bg {
@@ -137,6 +143,14 @@ blockquote.twitter-tweet {
     right: -10px;
     background: var(--primary);
     color: var(--default);
+  }
+}
+
+.link {
+  @apply px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary rounded-md text-sm;
+
+  :hover {
+    @apply scale-110 -translate-y-1;
   }
 }
 

@@ -17,6 +17,12 @@ module.exports = {
     extend: {
       colors: {
         default: 'var(--default)',
+        green: 'var(--green)',
+        blue: 'var(--blue)',
+        purple: 'var(--purple)',
+        red: 'var(--red)',
+        orange: 'var(--orange)',
+        violet: 'var(--violet)',
         'default-inverse': 'var(--default-inverse)',
         'card-bg': 'var(--card-bg)',
 
