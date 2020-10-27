@@ -4,7 +4,7 @@
       class="absolute w-full h-full border border-white border-dashed rounded-md opacity-50 border-on-background-2"
       style="bottom:-10px;"
     /> -->
-    <a :href="link" target="_blank">
+    <a :href="link" :target="target">
       <!-- <img :src="imageUrl" @error="setFallbackImage" :alt="imageAlt" class="relative object-contain rounded-md z-1"> -->
       <img
         :src="imageUrl"
@@ -23,6 +23,14 @@ export default {
     imageUrl: String,
     imageAlt: String,
     link: String,
+    isExternal: Boolean,
+  },
+
+  computed: {
+    target() {
+      if (this.isExternal) return '_blank'
+      return '_self'
+    },
   },
 
   methods: {
