@@ -8,25 +8,16 @@
           >
             {{ page.title }}
           </h1>
-          <div class="flex flex-row flex-wrap text-sm">
-            <div class="mb-2">
+          <div class="flex flex-row flex-wrap py-3 text-xs md:text-sm">
+            <div :class="`bg-${setColor}`" class="px-2 text-black rounded-full">
+              {{ page.tags[0] }}
+            </div>
+            <div class="mx-2 text-primary">&bull;</div>
+            <div>
               {{
                 this.$options.filters.formattedDate(new Date(page.createdAt))
               }}
             </div>
-            <div class="mx-2 text-primary">&bull;</div>
-            <template v-for="(tag, i) in page.tags">
-              <div :key="i" class="text-on-background-2">
-                {{ tag }}
-              </div>
-              <div
-                v-if="i < page.tags.length - 1"
-                :key="i + 'span'"
-                class="mx-2 text-primary"
-              >
-                &bull;
-              </div>
-            </template>
           </div>
         </div>
         <div>
@@ -97,7 +88,7 @@
             <div class="mr-16 share">
               <a
                 v-if="useNativeShare"
-                class="inline-flex items-center px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary hover:scale-110 hover:-translate-y-1"
+                class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
                 @click="shareWithNative"
               >
                 Share via...
@@ -106,20 +97,10 @@
                 v-else
                 target="_blank"
                 :href="`http://twitter.com/share?text=${page.title}&url=${fullURL}`"
-                class="inline-flex items-center px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary hover:scale-110 hover:-translate-y-1"
+                class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
               >
                 Share
                 <icon-twitter class="w-5 h-5 ml-2"></icon-twitter>
-              </a>
-            </div>
-            <div>
-              <a
-                target="_blank"
-                class="inline-flex items-center px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary hover:scale-110 hover:-translate-y-1"
-                href="https://twitter.com/messages/compose?recipient_id=1701561925"
-                data-screen-name="@chidinduogbonna"
-              >
-                Reach Out
               </a>
             </div>
           </div>
@@ -224,6 +205,28 @@ export default {
         return `https://chidinduogbonna.com/${this.page.slug}`
       }
     },
+
+    setColor() {
+      switch (this.page.tags[0].toLowerCase()) {
+        case 'use case':
+          return 'orange'
+
+        case 'cloud computing':
+          return 'purple'
+
+        case 'machine learning':
+          return 'red'
+
+        case 'data analysis':
+          return 'red'
+
+        case 'data':
+          return 'red'
+
+        default:
+          return 'blue'
+      }
+    },
   },
 
   mounted() {
@@ -240,6 +243,10 @@ export default {
 
   methods: {
     async shareWithNative() {
+      this.$store.dispatch('app/logEvent', {
+        name: 'share_with_native',
+        props: { title: this.page.title, url: this.fullURL },
+      })
       await navigator.share({ title: this.page.title, url: this.fullURL })
     },
 

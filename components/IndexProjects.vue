@@ -12,12 +12,7 @@
         </div>
       </div>
       <div>
-        <n-link
-          class="px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary hover:scale-110 hover:-translate-y-1"
-          to="/projects"
-        >
-          See All Projects
-        </n-link>
+        <n-link class="link" to="/projects"> See All Projects </n-link>
       </div>
     </div>
   </section>

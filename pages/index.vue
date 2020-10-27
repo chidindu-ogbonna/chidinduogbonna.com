@@ -25,12 +25,7 @@
         class="flex flex-col items-start justify-start max-w-screen-lg px-4 mx-auto"
       >
         <div class="mb-12">
-          <n-link
-            class="px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary hover:scale-110 hover:-translate-y-1"
-            to="/blog"
-          >
-            See My Resume
-          </n-link>
+          <n-link class="link" to="/blog"> See My Resume </n-link>
         </div>
 
         <TheSocialLinks class="mb-8" />
