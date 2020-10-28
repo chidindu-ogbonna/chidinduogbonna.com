@@ -4,7 +4,7 @@
       <div id="page-details" class="mb-12">
         <div class="px-4 py-8">
           <h1
-            class="mb-4 text-4xl font-extrabold leading-10 md:leading-normal md:text-5xl"
+            class="mb-4 text-2xl font-extrabold leading-10 md:leading-normal md:text-3xl"
           >
             {{ page.title }}
           </h1>
@@ -85,24 +85,24 @@
           <div class="mb-16 lg:px-4">
             <nuxt-content :document="page"></nuxt-content>
           </div>
-          <div class="flex items-center lg:px-4">
-            <div class="mr-16 share">
-              <a
-                v-if="useNativeShare"
-                class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
-                @click="shareWithNative"
-              >
-                Share via...
-              </a>
-              <a
-                v-else
-                target="_blank"
-                :href="`http://twitter.com/share?text=${page.title}&url=${fullURL}`"
-                class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
+          <div class="flex flex-col lg:px-4">
+            <div class="mb-8">
+              <button
+                class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer focus:outline-none md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
+                @click="share"
               >
                 Share
-                <icon-twitter class="w-5 h-5 ml-2"></icon-twitter>
-              </a>
+                <icon-send class="w-5 h-5 ml-2"></icon-send>
+              </button>
+            </div>
+            <div>
+              <n-link
+                to="/blog"
+                class="inline-flex items-center text-sm text-primary"
+              >
+                <icon-chevron-left class="w-5 h-5"></icon-chevron-left>
+                Back to Blog
+              </n-link>
             </div>
           </div>
         </div>
@@ -120,12 +120,16 @@
 </template>
 
 <script>
+import IconSend from '@/assets/svg/send.svg?inline'
 import IconChevronRight from '@/components/icons/IconChevronRight'
+import IconChevronLeft from '@/assets/svg/chevron-left.svg?inline'
 
 export default {
   name: 'Blogpost',
   components: {
+    IconSend,
     IconChevronRight,
+    IconChevronLeft,
   },
 
   async asyncData({ params, $content, error }) {
@@ -191,8 +195,6 @@ export default {
   },
 
   mounted() {
-    console.log('route: ', this.$route)
-
     window.addEventListener('scroll', this.checkFab)
 
     this.$on('hook:beforeDestroy', () => {
@@ -205,11 +207,25 @@ export default {
   },
 
   methods: {
-    async shareWithNative() {
+    async share() {
+      let via
+
+      if (this.useNativeShare) {
+        await this.shareWithNative()
+        via = 'native'
+      } else {
+        via = 'link'
+        const link = `http://twitter.com/share?text=${this.page.title}&url=${this.fullURL}`
+        window.open(link, '_blank')
+      }
+
       this.$store.dispatch('app/logEvent', {
-        name: 'share_with_native',
-        props: { title: this.page.title, url: this.fullURL },
+        name: 'article_shared',
+        props: { title: this.page.title, url: this.fullURL, via },
       })
+    },
+
+    async shareWithNative() {
       await navigator.share({ title: this.page.title, url: this.fullURL })
     },
 
@@ -299,15 +315,15 @@ export default {
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 1.35rem;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 1.15rem;
   }
 
   h4 {
-    font-size: 20px;
+    font-size: 1rem;
   }
 
   a {

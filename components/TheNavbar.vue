@@ -8,20 +8,24 @@
         <ul
           class="flex pr-4 overflow-x-scroll no-scrollbar text-on-background-2"
         >
-          <li v-for="i in links" :key="i.name" class="mr-4 md:mr-8">
-            <n-link
-              class="nav-link"
-              :class="[
-                $route.name === 'slug' && i.link === '/blog'
-                  ? 'nav-link--active'
-                  : '',
-              ]"
-              exact-active-class="nav-link--active"
-              :to="i.link"
-            >
-              {{ i.name }}
-            </n-link>
-          </li>
+          <template v-for="i in links">
+            <li :key="i.name" class="md:mr-8">
+              <n-link
+                class="nav-link"
+                :class="[
+                  $route.name === 'slug' && i.link === '/blog'
+                    ? 'nav-link--active'
+                    : '',
+                ]"
+                exact-active-class="nav-link--active"
+                :to="i.link"
+              >
+                {{ i.name }}
+              </n-link>
+            </li>
+            <span :key="`${i.name}-span`" class="mx-3">/</span>
+          </template>
+
           <li>
             <a class="nav-link" href="/resume.pdf" target="_blank">Résumé</a>
           </li>
@@ -59,6 +63,11 @@ export default {
 
   @media (min-width: 768px) {
     font-size: 1.125rem;
+  }
+
+  &:hover {
+    color: var(--primary);
+    border-bottom: 4px solid var(--primary);
   }
 
   &--active {

@@ -16,14 +16,12 @@
         <h1 class="text-3xl font-bold text-on-background-1">
           Hi, I'm Chidindu Ogbonna
         </h1>
-        <p class="text-sm text-on-background-2">
-          But you can call me * 6ones *
-        </p>
+        <p class="text-sm md:text-lg text-on-background-2">Call me 6ones.</p>
       </div>
       <div class="max-w-screen-sm mb-4">
         <h2 class="mb-2 text-lg font-bold text-on-background-1">An Engineer</h2>
         <div class="text-sm text-on-background-2 md:text-lg">
-          <div class="py-1">
+          <div class="pb-1">
             I engineer
             <span class="font-medium text-on-background-1">Software</span> and
             teach computers to behave like humans using
@@ -32,12 +30,16 @@
             >.
           </div>
 
-          <div class="py-1">
-            I've built some
+          <div class="pb-1">
+            I've built
             <a v-scroll-to="'#projects'" class="about-link" href="#projects">
-              things
+              software
             </a>
-            on the side, and have put some of those things on
+            on the side
+          </div>
+
+          <div>
+            I put some code on
             <a
               target="_blank"
               href="https://github.com/chidindu-ogbonna"
@@ -47,7 +49,7 @@
             </a>
           </div>
 
-          <div class="py-1">
+          <div class="pb-1">
             I blog <n-link to="/blog" class="about-link"> @blog </n-link> and
             tweet on
             <a
@@ -57,7 +59,7 @@
               >@twitter</a
             >
           </div>
-          <div class="py-1">
+          <div class="pb-1">
             You can email me at
             <a
               class="about-link"
