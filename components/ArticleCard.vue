@@ -12,7 +12,7 @@
     >
       <div class="py-2">
         <div class="flex flex-row flex-wrap justify-between mb-3 text-xs">
-          <div :class="`bg-${setColor}`" class="px-2 text-black rounded-full">
+          <div :class="`pill-${setColor}`" class="pill">
             {{ article.tags[0] }}
           </div>
           <div>

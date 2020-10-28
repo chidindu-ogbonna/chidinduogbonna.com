@@ -9,7 +9,7 @@
             {{ page.title }}
           </h1>
           <div class="flex flex-row flex-wrap py-3 text-xs md:text-sm">
-            <div :class="`bg-${setColor}`" class="px-2 text-black rounded-full">
+            <div :class="`pill-${setColor}`" class="pill">
               {{ page.tags[0] }}
             </div>
             <div class="mx-2 text-primary">&bull;</div>
@@ -25,6 +25,7 @@
             class="mx-auto md:rounded-md"
             :src="page.image"
             :alt="page.title"
+            @error="setFallbackImage"
           />
         </div>
       </div>
@@ -108,43 +109,6 @@
       </div>
     </div>
 
-    <div
-      v-if="prev || next"
-      class="max-w-screen-sm px-4 py-8 mx-auto mt-20 rounded-md bg-background"
-    >
-      <div class="mb-8 text-center">
-        <div
-          class="inline-flex w-auto text-base font-light tracking-wider text-center uppercase bg-default-inverse text-default"
-        >
-          continue reading
-        </div>
-      </div>
-      <div class="flex flex-col">
-        <div
-          v-if="prev"
-          class="flex items-center justify-start"
-          :class="[next ? 'mb-4' : null]"
-        >
-          <icon-arrow-left class="w-5 h-5 mr-2 text-primary" />
-          <a
-            :href="`/${prev.slug}`"
-            class="text-lg font-bold md:text-xl hover:text-primary"
-          >
-            {{ prev.title }}
-          </a>
-        </div>
-        <div v-if="next" class="flex items-center justify-end">
-          <a
-            :href="`/${next.slug}`"
-            class="text-lg font-bold md:text-xl hover:text-primary"
-          >
-            {{ next.title }}
-          </a>
-          <icon-arrow-right class="w-5 h-5 ml-2 text-primary" />
-        </div>
-      </div>
-    </div>
-
     <!-- FAB -->
     <the-fab
       scroll-to-id="#top"
@@ -157,14 +121,11 @@
 
 <script>
 import IconChevronRight from '@/components/icons/IconChevronRight'
-import IconArrowRight from '@/components/icons/IconArrowRight'
-import IconArrowLeft from '@/components/icons/IconArrowLeft'
 
 export default {
+  name: 'Blogpost',
   components: {
     IconChevronRight,
-    IconArrowRight,
-    IconArrowLeft,
   },
 
   async asyncData({ params, $content, error }) {
@@ -230,6 +191,8 @@ export default {
   },
 
   mounted() {
+    console.log('route: ', this.$route)
+
     window.addEventListener('scroll', this.checkFab)
 
     this.$on('hook:beforeDestroy', () => {
@@ -251,25 +214,25 @@ export default {
     },
 
     checkFab() {
-      const top = document
-        .getElementById('page-details')
-        .getBoundingClientRect()
+      let top = document.getElementById('page-details')
 
-      // if (this.topPrevious < top.top) {
-      //   this.$store.dispatch('app/toggleNavbar', { state: true })
-      // } else {
-      //   this.$store.dispatch('app/toggleNavbar', { state: false })
-      // }
+      if (top) {
+        top = top.getBoundingClientRect()
 
-      this.topPrevious = top.top
+        if (top.bottom <= 60) {
+          this.showFab = true
+        }
 
-      if (top.bottom <= 60) {
-        this.showFab = true
+        if (top.bottom > 60) {
+          this.showFab = false
+        }
       }
+    },
 
-      if (top.bottom > 60) {
-        this.showFab = false
-      }
+    setFallbackImage(event) {
+      event.target.src = require(`~/assets/images/no-image.svg`)
+      event.target.classList.add('mx-auto')
+      event.target.classList.add('p-8')
     },
   },
 

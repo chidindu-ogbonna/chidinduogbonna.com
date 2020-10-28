@@ -1,4 +1,9 @@
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+
   theme: {
     opacity: {
       0: '0',
@@ -15,6 +20,18 @@ module.exports = {
     },
 
     extend: {
+      zIndex: {
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9,
+      },
+
       colors: {
         default: 'var(--default)',
         green: 'var(--green)',
@@ -23,6 +40,8 @@ module.exports = {
         red: 'var(--red)',
         orange: 'var(--orange)',
         violet: 'var(--violet)',
+        white: 'var(--white)',
+        black: 'var(--black)',
         'default-inverse': 'var(--default-inverse)',
         'card-bg': 'var(--card-bg)',
 
@@ -45,18 +64,6 @@ module.exports = {
         'on-error': 'var(--on-error)',
 
         transparent: 'transparent',
-      },
-
-      zIndex: {
-        1: 1,
-        2: 2,
-        3: 3,
-        4: 4,
-        5: 5,
-        6: 6,
-        7: 7,
-        8: 8,
-        9: 9,
       },
 
       fontSize: {

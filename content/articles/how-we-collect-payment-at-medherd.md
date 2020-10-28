@@ -3,7 +3,7 @@ title: How We Collect Payments at Medherd
 description: 'A step by step guide on how we make use of the Stripe payment service (and corresponding APIs) at Medherd'
 image: 'https://res.cloudinary.com/cheapflix/image/upload/v1599430399/projects-images/medherd-stripe/Medherd_Stripe_Intro_1.png'
 tags:
-  - Cloud Computing
+  - Use Case
 isExternal: false
 published: true
 createdAt: September 5,2020

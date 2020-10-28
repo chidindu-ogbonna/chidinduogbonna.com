@@ -7,7 +7,6 @@ export default {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  mode: 'universal',
   target: 'server',
   head: {
     title: 'Call me 6ones - An Engineer',
@@ -20,13 +19,6 @@ export default {
       },
       ...splashScreens,
     ],
-    // script: [
-    //   {
-    //     src: 'https://platform.twitter.com/widgets.js',
-    //     charset: 'utf-8',
-    //     async: true,
-    //   },
-    // ],
   },
 
   css: [

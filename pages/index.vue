@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="py-8">
     <!-- <IndexIntro
       :class="[
         showIntro
@@ -15,19 +15,11 @@
 
     <IndexWriting :articles="articles" />
 
-    <!-- <IndexTweet :tweets="tweets" /> -->
-
-    <IndexExperience />
-
     <!-- Contact Section -->
     <section id="contact">
       <div
         class="flex flex-col items-start justify-start max-w-screen-lg px-4 mx-auto"
       >
-        <div class="mb-12">
-          <n-link class="link" to="/blog"> See My Resume </n-link>
-        </div>
-
         <TheSocialLinks class="mb-8" />
       </div>
     </section>
@@ -78,14 +70,12 @@ export default {
       articleQuery = { published: true, featured: true }
     }
 
-    const tweets = await $content('/tweets').fetch()
-
     const articles = await $content('/articles')
       .where(articleQuery)
       .sortBy('createdAt', 'desc')
       .fetch()
 
-    return { scrollTo, articles, tweets }
+    return { scrollTo, articles }
     // return { scrollTo, showIntro, articles }
   },
 
@@ -152,14 +142,18 @@ export default {
     },
 
     showElement() {
-      const about = document.getElementById('about').getBoundingClientRect()
+      let about = document.getElementById('about')
 
-      if (about.bottom <= 60) {
-        this.showFab = true
-      }
+      if (about) {
+        about = about.getBoundingClientRect()
 
-      if (about.bottom > 60) {
-        this.showFab = false
+        if (about.bottom <= 60) {
+          this.showFab = true
+        }
+
+        if (about.bottom > 60) {
+          this.showFab = false
+        }
       }
     },
   },
@@ -169,13 +163,6 @@ export default {
       bodyAttrs: {
         class: [this.showIntro ? 'overflow-hidden' : ''],
       },
-      // script: [
-      //   {
-      //     src: 'https://platform.twitter.com/widgets.js',
-      //     charset: 'utf-8',
-      //     async: true,
-      //   },
-      // ],
     }
   },
 }

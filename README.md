@@ -2,7 +2,7 @@
 
 > My Personal Blog
 
-> If you would like to know the details in building this, hit me up on [twitter](https://twitter.com/@6ones)
+> If you would like to know the details in building this, hit me up on [twitter](https://twitter.com/@chidinduogbonna)
 
 ## Build Setup
 

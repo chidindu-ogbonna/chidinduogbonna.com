@@ -1,3 +1,24 @@
+:root {
+  --dark: #0b0c0e;
+  --light: #f5f6f7;
+  --black: black;
+  --white: white;
+  --background-dark: #0b0c0e;
+  --background-dark-rgb: rgb(11, 12, 14, 0.7);
+  --background-dark-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23718096' fill-opacity='0.13' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  --background-light: #f5f6f7;
+  --background-light-rgb: rgb(245, 246, 247, 0.7);
+  --background-light-img: '';
+  --card-bg-dark: black;
+  --card-bg-light: white;
+  --co-green: #a2d39b;
+  --co-blue: #62d0dd;
+  --co-purple: #ceb4ff;
+  --co-red: #ff708b;
+  --co-orange: #ff8e21;
+  --co-violet: #a0b7ff;
+}
+
 body {
   font-family: 'Basier Circle Regular', -apple-system, BlinkMacSystemFont,
     Roboto, 'Oxygen-sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -17,25 +38,6 @@ body {
   transition-timing-function: ease-in;
 }
 
-:root {
-  --dark: #0b0c0e;
-  --light: #f5f6f7;
-  --background-dark: #0b0c0e;
-  --background-dark-rgb: rgb(11, 12, 14, 0.7);
-  --background-dark-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23718096' fill-opacity='0.13' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-  --background-light: #f5f6f7;
-  --background-light-rgb: rgb(245, 246, 247, 0.7);
-  --background-light-img: '';
-  --card-bg-dark: black;
-  --card-bg-light: white;
-  --green: #a2d39b;
-  --blue: #62d0dd;
-  --purple: #ceb4ff;
-  --red: #ff708b;
-  --orange: #ff8e21;
-  --violet: #a0b7ff;
-}
-
 .dark-bg {
   background-color: var(--background-dark);
   background-image: var(--background-dark-img);
@@ -46,22 +48,32 @@ body {
   background-image: var(--background-dark-img);
 }
 
+.theme-dark,
+.theme-light {
+  --potion: #0ef;
+  --green: var(--co-green);
+  --blue: var(--co-blue);
+  --purple: var(--co-purple);
+  --red: var(--co-red);
+  --orange: var(--co-orange);
+  --violet: var(--co-violet);
+
+  /* Error state */
+  --error: #cf6679;
+}
+
 /* Dark */
 .theme-dark {
   --default: var(--dark);
   --default-inverse: var(--light);
   --primary: #0ef;
   --primary-variant: #c2185b;
-  --potion: #0ef;
   --secondary: #96f2d7;
   --secondary-variant: #96f2d7;
   --background: var(--dark);
   --background-variant: #212529;
   --surface: #121212;
   --card-bg: var(--card-bg-dark);
-
-  /* Error state */
-  --error: #cf6679;
 
   /* typography */
   --on-primary: var(--light);
@@ -80,7 +92,6 @@ body {
   --default-inverse: var(--dark);
   --primary: #078080;
   --primary-variant: #c2185b;
-  --potion: #0ef;
   --secondary: #96f2d7;
   --secondary-variant: #96f2d7;
   --background: var(--light);
@@ -88,14 +99,12 @@ body {
   --surface: #121212;
   --card-bg: var(--card-bg-light);
 
-  /* Error state */
-  --error: #cf6679;
-
   /* typography */
   --on-primary: var(--dark);
   --on-secondary: #087f5b;
   --on-background-1: var(--dark);
-  --on-background-2: #293241;
+  // --on-background-2: #293241;
+  --on-background-2: #727f95;
   --on-background-3: #77797a;
   --on-error: #fff;
   --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -104,6 +113,61 @@ body {
 
 .cover-background {
   background-color: var(--cover-bg);
+}
+
+.pill {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: var(--black);
+  border-radius: 9999px;
+
+  &-green {
+    background-color: var(--co-green);
+  }
+
+  &-orange {
+    background-color: var(--co-orange);
+  }
+
+  &-violet {
+    background-color: var(--co-violet);
+  }
+
+  &-blue {
+    background-color: var(--co-blue);
+  }
+
+  &-purple {
+    background-color: var(--co-purple);
+  }
+
+  &-red {
+    background-color: var(--co-red);
+  }
+}
+
+.bg-green {
+  background-color: var(--co-green);
+}
+
+.bg-blue {
+  background-color: var(--co-blue);
+}
+
+.bg-purple {
+  background-color: var(--co-purple);
+}
+
+.bg-red {
+  background-color: var(--co-red);
+}
+
+.bg-orange {
+  background-color: var(--co-orange);
+}
+
+.bg-violet {
+  background-color: var(--co-violet);
 }
 
 blockquote.twitter-tweet {
@@ -225,15 +289,6 @@ blockquote.twitter-tweet {
 .slide-fade-enter,
 .slide-fade-leave-to {
   transform: translateX(50px);
-  opacity: 0;
-}
-
-.layout-enter-active,
-.layout-leave-active {
-  transition: all 0.3s ease;
-}
-.layout-enter,
-.layout-leave-to {
   opacity: 0;
 }
 

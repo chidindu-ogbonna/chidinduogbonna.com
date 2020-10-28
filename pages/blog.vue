@@ -1,6 +1,5 @@
 <template>
   <page-section>
-    <page-title class="mb-8"> Blog </page-title>
     <div class="flex flex-col flex-wrap md:flex-row fade-in-fwd">
       <div
         v-for="(article, index) in articles"
@@ -16,6 +15,7 @@
 
 <script>
 export default {
+  name: 'Blog',
   async asyncData({ $content }) {
     const isDev = process.env.APP_MODE === 'development'
     let articleQuery
@@ -36,7 +36,7 @@ export default {
 
   head() {
     return {
-      title: 'Blog - Chidindu Promise Ogbonna',
+      title: 'Blog - 6ones',
       meta: [
         {
           hid: 'twitter:image',
@@ -51,12 +51,12 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: 'Blog - Chidindu Promise Ogbonna',
+          content: 'Blog - 6ones',
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: 'Blog - Chidindu Promise Ogbonna',
+          content: 'Blog - 6ones',
         },
         {
           hid: 'og:url',

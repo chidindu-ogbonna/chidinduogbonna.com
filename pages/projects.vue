@@ -1,6 +1,5 @@
 <template>
   <page-section>
-    <page-title class="mb-8"> Projects </page-title>
     <div class="flex flex-col flex-wrap md:flex-row fade-in-fwd">
       <div
         v-for="(project, index) in projects"
@@ -18,6 +17,7 @@
 import { projects } from '@/info'
 
 export default {
+  name: 'Projects',
   data() {
     return {
       projects,
@@ -26,17 +26,17 @@ export default {
 
   head() {
     return {
-      title: 'Projects - Chidindu Promise Ogbonna',
+      title: 'Projects - 6ones',
       meta: [
         {
           hid: 'og:title',
           property: 'og:title',
-          content: 'Projects - Chidindu Promise Ogbonna',
+          content: 'Projects - 6ones',
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: 'Projects - Chidindu Promise Ogbonna',
+          content: 'Projects - 6ones',
         },
         {
           hid: 'og:url',
