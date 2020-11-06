@@ -9,7 +9,7 @@
           class="flex pr-4 overflow-x-scroll no-scrollbar text-on-background-2"
         >
           <template v-for="i in links">
-            <li :key="i.name" class="md:mr-8">
+            <li :key="i.name">
               <n-link
                 class="nav-link"
                 :class="[

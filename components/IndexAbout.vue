@@ -16,7 +16,9 @@
         <h1 class="text-3xl font-bold text-on-background-1">
           Hi, I'm Chidindu Ogbonna
         </h1>
-        <p class="text-sm md:text-lg text-on-background-2">Call me 6ones.</p>
+        <p class="text-sm md:text-lg text-on-background-2">
+          Call me <span class="text-on-background-1">6ones</span>
+        </p>
       </div>
       <div class="max-w-screen-sm mb-4">
         <h2 class="mb-2 text-lg font-bold text-on-background-1">An Engineer</h2>
@@ -73,7 +75,7 @@
             Currently working on making Jollof Rice easy to identify. You can
             see it at
             <a
-              href="https://isthisjollof.web.app"
+              href="https://isthisjollof.com"
               class="about-link"
               target="_blank"
               >IsThisJollof</a
