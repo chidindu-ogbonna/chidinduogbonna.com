@@ -43,6 +43,9 @@ module.exports = {
         white: 'var(--white)',
         black: 'var(--black)',
         'default-inverse': 'var(--default-inverse)',
+        'dark-blue': 'var(--dark-blue)',
+        'co-white': 'var(--co-white)',
+        'co-gray': 'var(--co-gray)',
         'card-bg': 'var(--card-bg)',
 
         primary: 'var(--primary)',

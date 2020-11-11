@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col w-full h-full transition-all duration-500 ease-in-out transform border-2 border-transparent rounded-md bg-card-bg hover:border-primary hover:scale-105 hover:-translate-y-1"
+    class="flex flex-col w-full h-full transition-all duration-500 ease-in-out transform border-2 border-transparent rounded-3xl bg-card-bg hover:border-primary hover:scale-105 hover:-translate-y-1"
   >
     <TheImage
       :image-url="imageUrl"

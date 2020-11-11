@@ -24,7 +24,7 @@ import { projects } from '@/info'
 export default {
   data() {
     return {
-      projects,
+      projects: projects.filter((project) => project.featured),
     }
   },
 }

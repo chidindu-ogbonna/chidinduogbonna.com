@@ -1,6 +1,6 @@
 <template>
   <page-section>
-    <div class="flex flex-col flex-wrap md:flex-row fade-in-fwd">
+    <div class="flex flex-col flex-wrap md:flex-row">
       <div
         v-for="(project, index) in projects"
         :key="index"

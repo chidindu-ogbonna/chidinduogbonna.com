@@ -9,7 +9,7 @@
           Ogbonna
         </h1>
         <p
-          class="text-sm font-semibold tracking-wider uppercase md:text-base text-potion tracking-in-expand-fwd"
+          class="text-sm font-semibold tracking-wider uppercase md:text-base text-potion"
         >
           An Engineer
         </p>

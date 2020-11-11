@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col flex-wrap md:flex-row fade-in-fwd">
+    <div class="flex flex-col flex-wrap md:flex-row">
       <template v-if="articles.length">
         <div
           v-for="(article, index) in articles"

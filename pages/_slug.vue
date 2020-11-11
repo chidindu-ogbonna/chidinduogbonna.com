@@ -70,17 +70,19 @@
               <span v-if="!showTOC">See Content</span>
               <span v-else>Hide</span>
             </button>
-            <ul
-              v-if="showTOC"
-              class="flex flex-col px-4 fade-in-fwd text-on-background-2"
-            >
-              <li v-for="(link, index) in toc" :key="index" class="toc-link">
-                <span class="mr-2 text-primary">{{ index + 1 }}</span>
-                <a v-scroll-to="`#${link.id}`" class="toc__text">{{
-                  link.text
-                }}</a>
-              </li>
-            </ul>
+            <transition name="fade-in">
+              <ul
+                v-if="showTOC"
+                class="flex flex-col px-4 text-on-background-2"
+              >
+                <li v-for="(link, index) in toc" :key="index" class="toc-link">
+                  <span class="mr-2 text-primary">{{ index + 1 }}</span>
+                  <a v-scroll-to="`#${link.id}`" class="toc__text">{{
+                    link.text
+                  }}</a>
+                </li>
+              </ul>
+            </transition>
           </div>
           <div class="mb-16 lg:px-4">
             <nuxt-content :document="page"></nuxt-content>
@@ -109,13 +111,9 @@
       </div>
     </div>
 
-    <!-- FAB -->
-    <the-fab
-      scroll-to-id="#top"
-      :class="[
-        showFab ? 'opacity-100 scale-up-center' : 'opacity-0 scale-down-center',
-      ]"
-    ></the-fab>
+    <transition name="fade-in">
+      <the-fab v-if="showFab" scroll-to-id="#top"></the-fab>
+    </transition>
   </slug-section>
 </template>
 
@@ -247,8 +245,7 @@ export default {
 
     setFallbackImage(event) {
       event.target.src = require(`~/assets/images/no-image.svg`)
-      event.target.classList.add('mx-auto')
-      event.target.classList.add('p-8')
+      event.target.classList.add('mx-auto', 'p-8', 'h-56', 'w-56')
     },
   },
 

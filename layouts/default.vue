@@ -1,29 +1,17 @@
 <template>
-  <div :class="`theme-${theme}`" class="text-on-background-1">
-    <the-navbar />
+  <div class="text-on-background-1 theme-dark">
+    <app-navbar />
     <nuxt keep-alive />
-    <the-footer />
+    <transition name="bottom-slide">
+      <app-footer v-if="$route.name !== 'slug'" />
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    theme() {
-      return this.$store.state.app.theme
-    },
-  },
-
   key(route) {
     return route.fullPath
-  },
-
-  head() {
-    return {
-      htmlAttrs: {
-        class: [`${this.theme}-bg`, 'bg-transition'],
-      },
-    }
   },
 }
 </script>

@@ -1,7 +1,31 @@
 export const projects = [
   {
+    title: 'Is This Jollof ?',
+    summary:
+      'Using Machine Learning (Convultional Neural Networks), we identify if that plate of food is jollof rice or not',
+    description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
+                  Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
+    location: {
+      url: 'https://isthisjollof.com',
+      name: 'View Project',
+    },
+    image: {
+      url:
+        'https://res.cloudinary.com/cheapflix/image/upload/v1604265689/isthisjollof-card.png',
+      alt: '',
+    },
+    featured: true,
+    github: {
+      url: null,
+      name: null,
+    },
+    tags: ['Web', 'Twitter Bot'],
+    stack: ['NodeJs', 'Google Cloud Platform'],
+  },
+  {
     title: '@threadspeaker',
-    summary: 'A twitter bot that converts tweets to audio',
+    summary:
+      'A twitter bot that converts tweets to audio using text-to-speech synthesis',
     description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
                   Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
     location: {
@@ -13,6 +37,8 @@ export const projects = [
         'https://res.cloudinary.com/cheapflix/image/upload/v1600531602/threadspeaker/card.png',
       alt: '',
     },
+    featured: true,
+
     github: {
       url: null,
       name: null,
@@ -30,6 +56,8 @@ export const projects = [
       url: null,
       alt: null,
     },
+    featured: true,
+
     image: {
       url:
         'https://res.cloudinary.com/cheapflix/image/upload/v1598585539/projects-images/Cloud_functions_for_firebase_boilerplate_2.png',
@@ -53,6 +81,8 @@ export const projects = [
         'https://nbviewer.jupyter.org/github/6ones/covid-19/blob/master/Real-time%20Rt%20in%20Nigeria.ipynb',
       name: 'View notebook',
     },
+    featured: false,
+
     image: {
       url:
         'https://res.cloudinary.com/cheapflix/image/upload/v1598585539/projects-images/covid-19-rt_2.png',

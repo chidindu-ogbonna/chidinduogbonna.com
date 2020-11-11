@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable vue/no-v-html -->
   <base-item-card
     :image-url="project.image.url"
     :image-alt="project.title"

@@ -4,7 +4,7 @@
       <img
         :src="imageUrl"
         :alt="imageAlt"
-        class="relative object-contain rounded-t-md z-1"
+        class="relative object-contain rounded-t-3xl z-1"
         @error="setFallbackImage"
       />
     </a>
@@ -31,8 +31,14 @@ export default {
   methods: {
     setFallbackImage(event) {
       event.target.src = require(`~/assets/images/no-image.svg`)
-      event.target.classList.add('mx-auto')
-      event.target.classList.add('p-8')
+      event.target.classList.add(
+        'mx-auto',
+        'p-8',
+        'md:h-56',
+        'md:w-56',
+        'h-40',
+        'w-40'
+      )
     },
   },
 }

@@ -17,6 +17,16 @@
   --co-red: #ff708b;
   --co-orange: #ff8e21;
   --co-violet: #a0b7ff;
+  --bg-gradient: linear-gradient(180deg, #edf5fe, #fff);
+  --potion: #0ef;
+  --dark-blue: #121c42;
+  --mh-purple: #7869f4;
+  --co-gray: #6e6e73;
+  --co-white: #f5f5f7;
+}
+
+html {
+  background-color: var(--background-dark);
 }
 
 body {
@@ -32,6 +42,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-popping {
+  font-family: Poppins, sans-serif;
+}
+
+.font-cursive {
+  font-family: 'Cedarville Cursive', cursive;
+}
+
 .bg-transition {
   transition-property: color background-color border-color;
   transition-duration: 150ms;
@@ -40,12 +58,27 @@ body {
 
 .dark-bg {
   background-color: var(--background-dark);
-  background-image: var(--background-dark-img);
+  // background-image: var(--background-dark-img);
 }
 
 .light-bg {
   background-color: var(--background-light);
   background-image: var(--background-dark-img);
+}
+
+.bg-black {
+  background: black;
+}
+
+.bg-gradient {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#edf5fe),
+    to(#fff)
+  );
+  background-image: linear-gradient(180deg, #edf5fe, #fff);
 }
 
 .theme-dark,
