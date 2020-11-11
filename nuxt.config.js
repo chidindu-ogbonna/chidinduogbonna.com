@@ -61,8 +61,8 @@ export default {
 
   pwa: {
     manifest: {
-      name: 'Chidindu Ogbonna',
-      short_name: 'Chidindu Ogbonna',
+      name: '6ones',
+      short_name: '6ones',
       theme_color: '#0b0c0e',
       background_color: '#000',
       start_url: `/?standalone=true`,
