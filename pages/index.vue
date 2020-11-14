@@ -8,7 +8,7 @@
 
     <!-- FAB -->
     <transition name="fade-in">
-      <the-fab v-if="showFab" scroll-to-id="#top"></the-fab>
+      <the-fab v-if="showFab" scroll-to-id="#about"></the-fab>
     </transition>
   </div>
 </template>

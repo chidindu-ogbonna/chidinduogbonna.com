@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="fixed bottom-0 left-0 right-0 max-w-screen-lg py-4 mx-auto"
+    class="py-4 mx-auto"
     style="
       -webkit-backdrop-filter: saturate(180%) blur(5px);
       backdrop-filter: saturate(180%) blur(5px);
@@ -47,7 +47,7 @@
       </ul>
       <a
         target="_blank"
-        class="flex items-center p-1 text-sm rounded-full text-default bg-default-inverse"
+        class="flex items-center p-1 text-xs rounded-full text-default bg-default-inverse"
         href="https://twitter.com/intent/user?screen_name=chidinduogbonna"
       >
         <img

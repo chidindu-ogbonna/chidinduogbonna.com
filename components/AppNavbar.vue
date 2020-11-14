@@ -20,7 +20,7 @@
           <li :key="i.name">
             <n-link
               :to="i.link"
-              class="transition-colors duration-300 ease-in-out cursor-pointer"
+              class="transition-colors duration-300 ease-in-out cursor-pointer hover:text-potion"
               exact-active-class="text-potion"
             >
               {{ i.name }}
