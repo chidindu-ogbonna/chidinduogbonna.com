@@ -1,12 +1,8 @@
 <template>
-  <footer
-    class="py-4 mx-auto"
-    style="
-      -webkit-backdrop-filter: saturate(180%) blur(5px);
-      backdrop-filter: saturate(180%) blur(5px);
-    "
-  >
-    <nav class="flex items-center justify-between px-4 text-4xl text-white">
+  <footer class="py-4">
+    <nav
+      class="flex items-center justify-between max-w-screen-lg px-4 mx-auto text-4xl text-white"
+    >
       <ul class="flex items-center justify-start text-on-background-1">
         <li class="mr-3">
           <a
@@ -79,6 +75,17 @@ export default {
       imageUrl:
         'https://res.cloudinary.com/cheapflix/image/upload/r_0/v1581550020/03a5e749-4ee9-49d5-8cf7-786806db376b.jpg',
     }
+  },
+
+  methods: {
+    visitLink(link) {
+      this.$store.dispatch('app/logSocialEvent', {
+        name: 'social-link_visited',
+        link,
+        route: this.$route.name,
+      })
+      return true
+    },
   },
 }
 </script>

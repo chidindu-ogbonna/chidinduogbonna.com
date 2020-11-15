@@ -1,17 +1,14 @@
 <template>
-  <header
-    class="fixed top-0 left-0 right-0 z-10 max-w-screen-lg mx-auto"
-    style="
-      -webkit-backdrop-filter: saturate(180%) blur(5px);
-      backdrop-filter: saturate(180%) blur(5px);
-    "
-  >
+  <header class="fixed top-0 left-0 right-0 z-10 dark-bg">
     <nav
-      class="flex items-center justify-between px-2 pt-2 text-on-background-2"
+      class="flex items-center justify-between max-w-screen-lg px-2 pt-2 mx-auto text-on-background-2"
     >
       <div class="text-2xl md:text-3xl font-cursive">
-        <nuxt-link to="/" class="cursor-pointer text-potion">
-          <!-- exact-active-class="text-potion" -->
+        <nuxt-link
+          to="/"
+          class="cursor-pointer text-potion"
+          @click.native="visitLink('/')"
+        >
           6ones
         </nuxt-link>
       </div>
@@ -22,13 +19,14 @@
               :to="i.link"
               class="transition-colors duration-300 ease-in-out cursor-pointer hover:text-potion"
               exact-active-class="text-potion"
+              @click.native="visitLink(i.link)"
             >
               {{ i.name }}
             </n-link>
           </li>
-          <span :key="`${i.name}-span`" class="mx-3 text-on-background-2"
-            >&bull;</span
-          >
+          <span :key="`${i.name}-span`" class="mx-3 text-on-background-2">
+            &bull;
+          </span>
         </template>
 
         <li>
@@ -36,8 +34,9 @@
             class="transition-colors duration-300 ease-in-out cursor-pointer hover:text-potion"
             href="/resume.pdf"
             target="_blank"
+            @click="visitLink('/resume.pdf')"
           >
-            Résumé
+            CV
           </a>
         </li>
       </ul>
@@ -50,10 +49,23 @@ export default {
   data() {
     return {
       links: [
+        { name: 'Me', link: '/' },
         { name: 'Projects', link: '/projects' },
         { name: 'Blog', link: '/blog' },
       ],
     }
+  },
+
+  methods: {
+    visitLink(link) {
+      this.$store.dispatch('app/logNavEvent', {
+        name: 'inlink_visited',
+        link,
+        position: 'nav',
+        route: this.$route.name,
+      })
+      return true
+    },
   },
 }
 </script>
