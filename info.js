@@ -2,23 +2,16 @@ export const projects = [
   {
     title: 'Is This Jollof ?',
     summary:
-      'Using Machine Learning (Convultional Neural Networks), we identify if that plate of food is jollof rice or not',
-    description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
-                  Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
-    location: {
-      url: 'https://isthisjollof.com',
-      name: 'View Project',
-    },
+      'Using Machine Learning (Convolutional Neural Networks), we identify if that plate of food is jollof rice or not',
+    description: `Using deep learning, I built a CNN model that can identify jollof rice from a picture`,
+    location: 'https://isthisjollof.com',
+    github: null,
     image: {
       url:
-        'https://res.cloudinary.com/cheapflix/image/upload/v1604265689/isthisjollof-card.png',
+        'https://res.cloudinary.com/cheapflix/image/upload/v1605550411/isthisjollof.png',
       alt: '',
     },
     featured: true,
-    github: {
-      url: null,
-      name: null,
-    },
     tags: ['Web', 'Twitter Bot'],
     stack: ['NodeJs', 'Google Cloud Platform'],
   },
@@ -28,21 +21,14 @@ export const projects = [
       'A twitter bot that converts tweets to audio using text-to-speech synthesis',
     description: `A twitter bot that converts tweets to audio using Machine Learning.<br />
                   Mention @threadspeaker at the last tweet of a thread and it sends you a link to the audio.`,
-    location: {
-      url: 'https://threadspeaker.app',
-      name: 'View Project',
-    },
+    location: 'https://threadspeaker.app',
     image: {
       url:
         'https://res.cloudinary.com/cheapflix/image/upload/v1600531602/threadspeaker/card.png',
       alt: '',
     },
     featured: true,
-
-    github: {
-      url: null,
-      name: null,
-    },
+    github: null,
     tags: ['Web', 'Twitter Bot'],
     stack: ['NodeJs', 'Google Cloud Platform'],
   },
@@ -52,10 +38,7 @@ export const projects = [
       'A cloud functions template for writing scalable and maintainable code',
     description: `An ever-evolving, opinionated architecture and development environment for writing and structuring google cloud functions for firebase.
     It takes into account performance of cloud functions, and developer productivity.`,
-    location: {
-      url: null,
-      alt: null,
-    },
+    location: null,
     featured: true,
 
     image: {
@@ -63,10 +46,7 @@ export const projects = [
         'https://res.cloudinary.com/cheapflix/image/upload/v1598585539/projects-images/Cloud_functions_for_firebase_boilerplate_2.png',
       alt: 'Cloud functions boilerplate',
     },
-    github: {
-      url: 'https://github.com/chidindu-ogbonna/cloud-functions-boilerplate',
-      name: '',
-    },
+    github: 'https://github.com/chidindu-ogbonna/cloud-functions-boilerplate',
     tags: ['Web', 'Twitter'],
     stack: ['TypeScript', 'Cloud Functions for Firebase'],
   },
@@ -76,22 +56,14 @@ export const projects = [
     description: `A data analysis project done during the coronavirus pandemic. This project offers visual insights
       and statiscal analysis into the development and spread of the virus within Nigeria. It also shows estimated
       calculations on the Effective Reproduction Number (Rt) of the virus.`,
-    location: {
-      url:
-        'https://nbviewer.jupyter.org/github/6ones/covid-19/blob/master/Real-time%20Rt%20in%20Nigeria.ipynb',
-      name: 'View notebook',
-    },
+    location: null,
     featured: false,
-
     image: {
       url:
         'https://res.cloudinary.com/cheapflix/image/upload/v1598585539/projects-images/covid-19-rt_2.png',
       alt: '',
     },
-    github: {
-      url: 'https://github.com/chidindu-ogbonna/datahorror',
-      name: '',
-    },
+    github: 'https://github.com/chidindu-ogbonna/covid-19-rt-in-nigeria',
     tags: ['Web', 'Twitter'],
     stack: ['Python', 'Pandas'],
   },
