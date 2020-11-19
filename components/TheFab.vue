@@ -7,6 +7,7 @@
       v-scroll-to="scrollToId"
       href="#"
       class="flex items-center justify-center w-12 h-12 text-sm rounded-full text-default bg-primary"
+      @click="fabClicked"
     >
       <IconArrowUp class="w-6 h-6" />
     </a>
@@ -18,6 +19,15 @@ export default {
   props: {
     /* eslint-disable vue/require-default-prop */
     scrollToId: String,
+  },
+
+  methods: {
+    fabClicked() {
+      this.$store.dispatch('app/logNavEvent', {
+        name: 'fab_clicked',
+      })
+      return true
+    },
   },
 }
 </script>

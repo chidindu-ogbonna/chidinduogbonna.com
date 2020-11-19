@@ -24,7 +24,12 @@
         <p class="mb-2">
           Currently working on
           <span class="highlight">Jollof Rice</span> @
-          <a href="https://isthisjollof.com" class="about-link" target="_blank">
+          <a
+            href="https://isthisjollof.com"
+            class="about-link"
+            target="_blank"
+            @click="visitProject('isthisjollof.com')"
+          >
             isthisjollof.com
           </a>
         </p>
@@ -41,6 +46,7 @@
         v-scroll-to="`#projects`"
         href="#"
         class="flex items-center px-3 py-3 text-sm text-on-background-2 animate-bounce"
+        @click="scroll"
       >
         Scroll down
         <icon-chevron-left class="w-6 h-6 about-icon"></icon-chevron-left>
@@ -54,6 +60,24 @@ import IconChevronLeft from '@/assets/svg/chevron-left.svg?inline'
 export default {
   components: {
     IconChevronLeft,
+  },
+
+  methods: {
+    visitProject(project) {
+      this.$store.dispatch('app/logProjectEvent', {
+        name: 'project_visited',
+        project,
+        route: this.$route.name,
+      })
+      return true
+    },
+
+    scroll() {
+      this.$store.dispatch('app/logNavEvent', {
+        name: 'scroll-button_clicked',
+      })
+      return true
+    },
   },
 }
 </script>

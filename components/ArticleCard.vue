@@ -21,10 +21,15 @@
             }}
           </div>
         </div>
-        <a v-if="article.isExternal" :href="link" target="_blank">
+        <a
+          v-if="article.isExternal"
+          :href="link"
+          target="_blank"
+          @click="visitArticle(article.title)"
+        >
           <p class="text-xl font-semibold">{{ article.title }}</p>
         </a>
-        <a v-else :href="link">
+        <a v-else :href="link" @click="visitArticle(article.title)">
           <p class="text-xl font-semibold">{{ article.title }}</p>
         </a>
         <div
@@ -73,6 +78,17 @@ export default {
         default:
           return 'blue'
       }
+    },
+  },
+
+  methods: {
+    visitArticle(article) {
+      this.$store.dispatch('app/logArticleEvent', {
+        name: 'article_visited',
+        article,
+        route: this.$route.name,
+      })
+      return true
     },
   },
 }
