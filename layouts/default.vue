@@ -3,7 +3,7 @@
     <app-navbar />
     <nuxt keep-alive />
     <transition name="bottom-slide">
-      <app-footer v-if="$route.name !== 'slug'" />
+      <app-footer />
     </transition>
   </div>
 </template>

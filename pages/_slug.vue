@@ -1,11 +1,10 @@
 <template>
   <slug-section id="top">
     <div class="mb-16">
+      <!-- heading -->
       <div id="page-details" class="mb-12">
-        <div class="px-4 py-8">
-          <h1
-            class="mb-4 text-2xl font-extrabold leading-10 md:leading-normal md:text-3xl"
-          >
+        <div class="px-4 py-8 lg:py-16">
+          <h1 class="mb-4 text-2xl font-semibold md:text-4xl">
             {{ page.title }}
           </h1>
           <div class="flex flex-row flex-wrap py-3 text-xs md:text-sm">
@@ -30,8 +29,10 @@
         </div>
       </div>
 
+      <!-- Body -->
       <div class="flex flex-row items-start px-4">
-        <div
+        <!-- TOC Desktop -->
+        <!-- <div
           v-if="toc && toc.length > 1"
           class="sticky flex-col hidden w-1/5 lg:flex"
           style="top: 6rem; position: -webkit-sticky"
@@ -52,9 +53,34 @@
               }}</a>
             </li>
           </ul>
-        </div>
+        </div> -->
 
-        <div class="w-full max-w-screen-sm mx-auto lg:w-4/5">
+        <transition name="fade-in">
+          <div
+            v-if="toc && toc.length > 1 && showTOCDesktop"
+            class="fixed top-0 left-0 flex-col justify-center hidden h-screen px-2 py-20 md:flex"
+          >
+            <div class="mb-8">
+              <div
+                class="inline-flex w-auto text-base font-light tracking-wider text-center uppercase bg-default-inverse text-default"
+              >
+                on this page
+              </div>
+            </div>
+
+            <ul class="flex flex-col text-on-background-2">
+              <li v-for="(link, index) in toc" :key="index" class="toc-link">
+                <span class="mr-2 text-primary">{{ index + 1 }}</span>
+                <a v-scroll-to="`#${link.id}`" class="toc__text">{{
+                  link.text
+                }}</a>
+              </li>
+            </ul>
+          </div>
+        </transition>
+
+        <!-- TOC mobile -->
+        <div class="w-full max-w-screen-md mx-auto lg:px-4 lg:w-4/5">
           <div
             v-if="toc && toc.length > 1"
             class="flex flex-col mb-4 lg:hidden lg:px-4"
@@ -84,36 +110,37 @@
               </ul>
             </transition>
           </div>
-          <div class="mb-16 lg:px-4">
+
+          <!-- Content -->
+          <div ref="content" class="mb-16 lg:px-4">
             <nuxt-content :document="page"></nuxt-content>
           </div>
-          <div class="flex flex-col lg:px-4">
-            <div class="mb-8">
-              <button
-                class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer focus:outline-none md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
-                @click="share"
-              >
-                Share
-                <icon-send class="w-5 h-5 ml-2"></icon-send>
-              </button>
-            </div>
-            <div>
-              <n-link
-                to="/blog"
-                class="inline-flex items-center text-sm text-primary"
-              >
-                <icon-chevron-left class="w-5 h-5"></icon-chevron-left>
-                Back to Blog
-              </n-link>
-            </div>
+
+          <!-- Share -->
+          <div class="flex items-center justify-between lg:px-4">
+            <n-link
+              to="/blog"
+              class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer focus:outline-none md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
+            >
+              <icon-chevron-left class="w-5 h-5 mr-2"></icon-chevron-left>
+              Back
+            </n-link>
+
+            <button
+              class="inline-flex items-center px-2 py-1 text-xs transition-all duration-500 ease-in transform border-2 rounded-md cursor-pointer focus:outline-none md:text-sm border-primary text-primary hover:scale-110 hover:-translate-y-1"
+              @click="share"
+            >
+              <icon-send class="w-5 h-5 mr-2"></icon-send>
+              Share
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <transition name="fade-in">
+    <!-- <transition name="fade-in">
       <the-fab v-if="showFab" scroll-to-id="#top"></the-fab>
-    </transition>
+    </transition> -->
   </slug-section>
 </template>
 
@@ -151,6 +178,7 @@ export default {
     return {
       showFab: false,
       showTOC: false,
+      showTOCDesktop: false,
       useNativeShare: false,
       topPrevious: 0,
     }
@@ -193,10 +221,10 @@ export default {
   },
 
   mounted() {
-    window.addEventListener('scroll', this.checkFab)
+    window.addEventListener('scroll', this.checkContentPosition)
 
     this.$on('hook:beforeDestroy', () => {
-      window.removeEventListener('scroll', this.checkFab)
+      window.removeEventListener('scroll', this.checkContentPosition)
     })
 
     if (navigator.share) {
@@ -227,19 +255,13 @@ export default {
       await navigator.share({ title: this.page.title, url: this.fullURL })
     },
 
-    checkFab() {
-      let top = document.getElementById('page-details')
+    checkContentPosition() {
+      const contentPosition = this.$refs.content.getBoundingClientRect()
 
-      if (top) {
-        top = top.getBoundingClientRect()
-
-        if (top.bottom <= 60) {
-          this.showFab = true
-        }
-
-        if (top.bottom > 60) {
-          this.showFab = false
-        }
+      if (contentPosition.top < 100) {
+        this.showTOCDesktop = true
+      } else {
+        this.showTOCDesktop = false
       }
     },
 
@@ -304,15 +326,23 @@ export default {
   h2,
   h3,
   h4 {
-    font-weight: 700;
-    padding: 40px 0px 0px 0px;
-    margin: 0px 0px 24px 0px;
+    font-weight: 600;
+    padding: 40px 0px 24px 0px;
+    // margin: 0px 0px 24px 0px;
     letter-spacing: -0.3px;
     line-height: 34px;
+
+    @screen lg {
+      padding: 50px 0px 30px 0px;
+    }
   }
 
   h2 {
     font-size: 1.35rem;
+
+    @screen lg {
+      font-size: 2.2rem;
+    }
   }
 
   h3 {
@@ -321,6 +351,27 @@ export default {
 
   h4 {
     font-size: 1rem;
+  }
+
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+
+    margin: 0 auto 18px auto;
+
+    @screen lg {
+      font-size: 18px;
+    }
+
+    b {
+      font-weight: 900;
+    }
+
+    code {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      background: var(--default);
+      color: var(--on-background-2);
+    }
   }
 
   a {
@@ -355,21 +406,6 @@ export default {
 
   i {
     color: var(--on-background-2);
-  }
-
-  p {
-    margin: 0 auto 28px auto;
-
-    b {
-      font-weight: 900;
-    }
-
-    code {
-      font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
-      background: var(--default);
-      color: var(--on-background-2);
-    }
   }
 
   table {

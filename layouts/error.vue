@@ -15,7 +15,7 @@
           <template> / </template>
         </li>
         <li>
-          <a href="/resume.pdf" class="ml-2 btn"> My Resume </a>
+          <a href="/resume.pdf" class="ml-2 btn"> CV </a>
         </li>
       </ul>
     </div>

@@ -3,13 +3,14 @@
   --light: #f5f6f7;
   --black: black;
   --white: white;
-  --background-dark: #0b0c0e;
+  --background-dark: #1f1f1f;
+  // --background-dark: #0b0c0e;
   --background-dark-rgb: rgb(11, 12, 14, 0.7);
   --background-dark-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23718096' fill-opacity='0.13' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   --background-light: #f5f6f7;
   --background-light-rgb: rgb(245, 246, 247, 0.7);
   --background-light-img: '';
-  --card-bg-dark: black;
+  --card-bg-dark: #151516;
   --card-bg-light: white;
   --co-green: #a2d39b;
   --co-blue: #62d0dd;
@@ -240,10 +241,10 @@ blockquote.twitter-tweet {
 }
 
 .link {
-  @apply px-2 py-1 transition-all duration-500 ease-in transform border-2 cursor-pointer border-primary text-primary rounded-md text-sm;
+  @apply px-2 py-1 transition-all duration-300 ease-in transform border-2 cursor-pointer border-primary text-primary rounded-md text-sm;
 
-  :hover {
-    @apply scale-110 -translate-y-1;
+  &:hover {
+    @apply bg-primary text-black scale-110 -translate-y-1;
   }
 }
 
