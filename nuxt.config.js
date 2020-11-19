@@ -9,13 +9,17 @@ export default {
   },
   target: 'server',
   head: {
-    title: 'Call me 6ones - An Engineer',
+    title: 'Chidindu Ogbonna - An Engineer, call me 6ones',
     meta: [...meta],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter&display=swap',
       },
       {
         rel: 'stylesheet',

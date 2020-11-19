@@ -19,7 +19,7 @@ export const meta = [
   {
     hid: 'twitter:title',
     name: 'twitter:title',
-    content: 'Call me 6ones',
+    content: 'Chidindu Ogbonna - An Engineer, call me 6ones',
   },
   {
     hid: 'twitter:description',
@@ -34,13 +34,13 @@ export const meta = [
   {
     hid: 'twitter:image:alt',
     name: 'twitter:image:alt',
-    content: 'Call me 6ones',
+    content: 'Chidindu Ogbonna - An Engineer, call me 6ones',
   },
 
   {
     hid: 'og:title',
     property: 'og:title',
-    content: 'Call me 6ones',
+    content: 'Chidindu Ogbonna - An Engineer, call me 6ones',
   },
   {
     hid: 'og:url',
