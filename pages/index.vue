@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-screen-lg mx-auto">
     <IndexAbout @mount-intro="mountIntro" />
 
     <IndexProjects />

@@ -1,5 +1,22 @@
 export const projects = [
   {
+    title: 'Medherd',
+    summary:
+      'A SAAS for the Health industry that provides an AI-powered recommendation engine help drive adoption of health software devices.',
+    location: 'https://medherd.com',
+    github: null,
+    image: {
+      url:
+        'https://firebasestorage.googleapis.com/v0/b/dashboard-chain.appspot.com/o/medherd%20images1%201.png?alt=media&token=fe5e7b08-4e82-4686-9970-3142634f6d56',
+      alt: '',
+    },
+    featured: true,
+    tags: ['Web', 'Twitter Bot'],
+    stack: ['NodeJs', 'Google Cloud Platform'],
+    description: `As lead engineer, I led the development of all our software services and systems.\n
+    `,
+  },
+  {
     title: 'Is This Jollof ?',
     summary:
       'Using Machine Learning (Convolutional Neural Networks), we identify if that plate of food is jollof rice or not',

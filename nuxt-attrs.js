@@ -29,7 +29,7 @@ export const meta = [
   {
     hid: 'twitter:image',
     name: 'twitter:image',
-    content: 'https://datahorror.appspot.com/images/card.png',
+    content: 'https://startedthis.web.app/images/card.png',
   },
   {
     hid: 'twitter:image:alt',
@@ -52,7 +52,7 @@ export const meta = [
   {
     hid: 'og:image',
     property: 'og:image',
-    content: 'https://datahorror.appspot.com/images/card.png',
+    content: 'https://startedthis.web.app/images/card.png',
   },
   {
     hid: 'og:site_name',
@@ -64,23 +64,11 @@ export const meta = [
     property: 'og:description',
     content: 'An Engineer',
   },
-  { property: 'og:email', content: 'hello@chidinduogbonna.com' },
+  { property: 'og:email', content: 'promise.bones@gmail.com' },
   { property: 'og:phone_number', content: '2348079191593' },
 ]
 
 export const splashScreens = [
-  {
-    rel: 'icon',
-    type: 'image/png',
-    href: '/icons/android-chrome-96x96.png',
-    sizes: '96x96',
-  },
-  {
-    rel: 'icon',
-    type: 'image/png',
-    href: '/icons/android-chrome-144x144.png',
-    sizes: '144x144',
-  },
   {
     rel: 'icon',
     type: 'image/png',
@@ -94,25 +82,9 @@ export const splashScreens = [
     sizes: '512x512',
   },
   {
-    rel: 'icon',
-    type: 'image/png',
-    href: '/icons/apple-icon-120.png',
-    sizes: '120x120',
-  },
-  {
     rel: 'apple-touch-icon',
     sizes: '180x180',
-    href: '/icons/apple-icon-180.png',
-  },
-  {
-    rel: 'apple-touch-icon',
-    sizes: '152x152',
-    href: '/icons/apple-icon-152.png',
-  },
-  {
-    rel: 'apple-touch-icon',
-    sizes: '167x167',
-    href: '/icons/apple-icon-167.png',
+    href: '/icons/apple-touch-icon.png',
   },
   {
     name: 'apple-mobile-web-app-capable',

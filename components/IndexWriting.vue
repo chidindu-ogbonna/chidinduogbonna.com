@@ -9,7 +9,7 @@
         <div
           v-for="(article, index) in articles"
           :key="index"
-          class="w-full mb-10 md:px-4 md:w-1/2 lg:w-1/3"
+          class="w-full mb-10 md:px-4 md:w-1/2"
         >
           <article-card :article="article" />
         </div>

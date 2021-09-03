@@ -7,9 +7,9 @@ export default {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  target: 'server',
+  target: 'static',
   head: {
-    title: 'Chidindu Ogbonna - An Engineer, call me 6ones',
+    title: '6ones',
     meta: [...meta],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -38,6 +38,7 @@ export default {
 
   plugins: [
     { src: '@/plugins/vue-scrollto.js', mode: 'client' },
+    { src: '@/plugins/vue-typed.js', mode: 'client' },
     // { src: '@/plugins/vuex-persist.js', mode: 'client' },
     '@/plugins/filters.js',
   ],

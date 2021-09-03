@@ -2,14 +2,14 @@
   <section id="projects" class="min-h-screen py-20">
     <div class="flex flex-col justify-center px-4 mx-auto">
       <div class="w-full mb-8 text-center">
-        <page-title> Side projects </page-title>
+        <page-title> projects </page-title>
       </div>
       <div class="flex flex-col flex-wrap mb-4 md:flex-row">
         <!-- :class="[index % 2 == 0 ? 'md:pr-8' : 'md:pl-8']" -->
         <div
           v-for="(project, index) in projects"
           :key="index"
-          class="w-full mb-10 md:px-4 md:w-1/2 lg:w-1/3"
+          class="w-full mb-10 md:px-4 md:w-1/2"
         >
           <project-card :project="project" />
         </div>

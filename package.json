@@ -10,6 +10,7 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
+    "deploy:now": "cat .env.production > .env && nuxt generate && firebase deploy --only hosting:startedthis",
     "deploy": "cat .env.production > .env && nuxt build && gcloud app deploy app.yaml --project=datahorror --quiet",
     "test": "jest"
   },
@@ -29,7 +30,9 @@
     "firebase": "^7.19.0",
     "nuxt": "^2.14.0",
     "prism-themes": "^1.4.0",
+    "typed.js": "^2.0.12",
     "vue-scrollto": "^2.18.2",
+    "vue-typed-js": "^0.1.2",
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {

@@ -6,7 +6,7 @@
       <ul class="flex items-center justify-start text-on-background-1">
         <li class="mr-3">
           <a
-            href="mailto:hello@chidinduogbonna.com"
+            href="mailto:promise.bones@gmail.com"
             target="_blank"
             class="transition-colors duration-300 ease-in-out cursor-pointer hover:text-potion"
           >
@@ -15,7 +15,7 @@
         </li>
         <li class="mx-3">
           <a
-            href="https://twitter.com/intent/user?screen_name=chidinduogbonna"
+            href="https://twitter.com/intent/user?screen_name=madebypromise"
             target="_blank"
             class="transition-colors duration-300 ease-in-out cursor-pointer hover:text-potion"
           >
@@ -44,7 +44,7 @@
       <a
         target="_blank"
         class="flex items-center p-1 text-xs rounded-full text-default bg-default-inverse"
-        href="https://twitter.com/intent/user?screen_name=chidinduogbonna"
+        href="https://twitter.com/intent/user?screen_name=madebypromise"
       >
         <img
           :src="imageUrl"

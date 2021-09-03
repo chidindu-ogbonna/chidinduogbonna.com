@@ -3,13 +3,18 @@
     <nav
       class="flex items-center justify-between max-w-screen-lg px-2 pt-2 mx-auto text-on-background-2"
     >
-      <div class="text-2xl md:text-3xl font-cursive">
+      <div class="text-2xl md:text-3xl">
         <nuxt-link
           to="/"
           class="cursor-pointer text-potion"
           @click.native="visitLink('/')"
         >
           6ones
+          <!-- <img
+            :src="imageUrl"
+            class="w-10 h-10 rounded-full bounce-in-bottom"
+            alt="Chidindu Promise Ogbonna"
+          /> -->
         </nuxt-link>
       </div>
       <ul class="flex pr-4 overflow-x-scroll text-sm no-scrollbar md:text-lg">
@@ -48,6 +53,8 @@
 export default {
   data() {
     return {
+      imageUrl:
+        'https://firebasestorage.googleapis.com/v0/b/dashboard-chain.appspot.com/o/profile-picture.jpg?alt=media&token=a80f9bf6-acf4-41ae-bd18-8649fd9d709d',
       links: [
         { name: 'Me', link: '/' },
         { name: 'Projects', link: '/projects' },
