@@ -21,7 +21,7 @@ export const projects = [
     summary:
       'Using Machine Learning (Convolutional Neural Networks), we identify if that plate of food is jollof rice or not',
     description: `Using deep learning, I built a CNN model that can identify jollof rice from a picture`,
-    location: 'https://isthisjollof.com',
+    location: 'https://isthisjollof.web.app',
     github: null,
     image: {
       url:

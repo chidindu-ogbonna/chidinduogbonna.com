@@ -16,7 +16,7 @@
         </h1>
       </vue-typed-js>
 
-      <vue-typed-js :start-delay="3000" :strings="['An AI Engineer']">
+      <vue-typed-js :start-delay="5000" :strings="['An AI & Web Engineer']">
         <h2
           class="mb-4 text-xl font-semibold md:text-4xl text-on-background-1 highlight"
         >
@@ -38,12 +38,12 @@
           Currently working on
           <span class="highlight">Jollof Rice</span> @
           <a
-            href="https://isthisjollof.com"
+            href="https://isthisjollof.web.app"
             class="about-link"
             target="_blank"
-            @click="visitProject('isthisjollof.com')"
+            @click="visitProject('isthisjollof.web.app')"
           >
-            isthisjollof.com
+            isthisjollof.web.app
           </a>
         </p>
 
