@@ -16,7 +16,7 @@
         </h1>
       </vue-typed-js>
 
-      <vue-typed-js :start-delay="5000" :strings="['An AI & Web Engineer']">
+      <vue-typed-js :start-delay="4000" :strings="['Applied AI Engineer']">
         <h2
           class="mb-4 text-xl font-semibold md:text-4xl text-on-background-1 highlight"
         >
